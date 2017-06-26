@@ -1,0 +1,54 @@
+<h3>Tasks</h3>
+<h4><i>(PatchValue)</i></h4>
+<form [formGroup]="taskForm" novalidate>
+    <div class="form-group">
+        <label class="center-block">
+            $
+            <input class="form-control" formControlName="name">
+        </label>
+    </div>
+
+
+    <div formGroupName="properties" class="property_list">
+        <h4>Task Properties</h4>
+        
+        <div class="form-group">
+            <label class="center-block">
+                DYNO SIZE
+                <select class="form-control" formControlName="dynoSize">
+                    <option *ngFor="let dynoSize of dynoSizes" [value]="dynoSize">{{dynoSize}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block">
+                FREQUENCY
+                <select class="form-control" formControlName="frequency">
+                    <option *ngFor="let frequency of frequencies" [value]="frequency">{{frequency}}</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label class="center-block">
+                LAST RUN
+                <input class="form-control" formControlName="lastRun">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block">
+                NEXT DUE
+                <input class="form-control" formControlName="nextDue">
+            </label>
+        </div>
+    </div>
+    
+    
+
+</form>
+
+
+
+
+<p>taskForm value: {{ taskForm.value | json}}</p>
+
